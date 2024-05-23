@@ -1,7 +1,7 @@
 'use strict'
 
 import { Router } from 'express'
-import { getAlumnos, addAlumno} from './data.js';
+import { getAlumnos, addAlumno, getProfesores, addProfesor, getAsignaturas, addAsignatura } from './data.js';
 let router = Router()
 
 // Ruta para obtener todos los alumnos
