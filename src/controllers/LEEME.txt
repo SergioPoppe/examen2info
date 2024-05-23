@@ -1,1 +1,30 @@
-Usa esta carpeta para crear los controladores que necesites
+'use strict';
+
+import { getAlumnos, addAlumno, getProfesores, addProfesor, getAsignaturas, addAsignatura } from './data.js';
+
+export function getAlumnoById(idAlumno) {
+    const alumnos = getAlumnos();
+    return alumnos.find(alumno => alumno.id === idAlumno);
+}
+
+export function getProfesorById(idProfesor) {
+    const profesores = getProfesores();
+    return profesores.find(profesor => profesor.id === idProfesor);
+}
+
+export function getAsignaturaById(idAsignatura) {
+    const asignaturas = getAsignaturas();
+    return asignaturas.find(asignatura => asignatura.id === idAsignatura);
+}
+
+// Asignaturas que imparte un profesor
+export function getAsignaturasByProfesorId(idProfesor) {
+    const asignaturas = getAsignaturas();
+    return asignaturas.filter(asignatura => asignatura.profesorId === idProfesor);
+}
+
+// Asignaturas en las que está matriculado un alumno
+export function getAsignaturasByAlumnoId(idAlumno) {
+    const asignaturas = getAsignaturas();
+    return asignaturas.filter(asignatura => asignatura.alumnos.includes(idAlumno));
+}
