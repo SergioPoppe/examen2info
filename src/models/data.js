@@ -7,7 +7,10 @@ export function getAlumnos() {
 }
 
 export function addAlumno(alumno) {
-    // TODO
+       // Añadir el nuevo alumno al array de alumnos
+    data.alumnos.push(alumno);
+    // Guardar los cambios en data.json
+    fs.writeFileSync('./data.json', JSON.stringify(data, null, 2));
 }
 
 export function getProfesores() {
@@ -15,7 +18,10 @@ export function getProfesores() {
 }
 
 export function addProfesor(profesor) {
-    // TODO
+     // Añadir el nuevo profesor al array de profesores
+    data.profesores.push(profesor);
+    // Guardar los cambios en data.json
+    fs.writeFileSync('./data.json', JSON.stringify(data, null, 2));
 }
 
 export function getAsignaturas() {
@@ -23,5 +29,8 @@ export function getAsignaturas() {
 }
 
 export function addAsignatura(asignatura) {
-    // TODO
+      // Añadir la nueva asignatura al array de asignaturas
+    data.asignaturas.push(asignatura);
+    // Guardar los cambios en data.json
+    fs.writeFileSync('./data.json', JSON.stringify(data, null, 2));
 }
